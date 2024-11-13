@@ -22,7 +22,7 @@ yum install -y kernel*
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config    
 
 cd /usr/src/
-git https://github.com/Salem6664/vicidial-install-scripts.git
+git clone https://github.com/Salem6664/vicidial-install-scripts.git
 
 reboot
 

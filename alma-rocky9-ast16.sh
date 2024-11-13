@@ -722,7 +722,6 @@ Please Hold while I redirect you!
 WELCOME
 
 chmod 777 /var/spool/asterisk/monitorDONE
-chkconfig asterisk off
 
 read -p 'Press Enter to Reboot: '
 

@@ -579,6 +579,15 @@ chmod +x /etc/rc.d/rc.local
 systemctl enable rc-local
 systemctl start rc-local
 
+##Install Firewall
+yum install -y firewalld
+yum install -y firewalld
+systemctl enable firewalld
+service firewalld start
+
+firewall-offline-cmd --add-port=446/tcp --zone=public
+
+
 ##Fix ip_relay
 cd /usr/src/astguiclient/trunk/extras/ip_relay/
 unzip ip_relay_1.1.112705.zip

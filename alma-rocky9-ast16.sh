@@ -595,6 +595,7 @@ wget https://dialer.one/aggregate
 wget https://dialer.one/VB-firewall
 
 mkdir -p /var/www/vhosts/dynportal
+mv /home/firewall.zip /etc/firewalld/
 cd /var/www/vhosts/
 git clone https://github.com/Salem6664/dynportal.git
 cd /var/www/vhosts/dynportal/

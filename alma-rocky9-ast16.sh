@@ -589,16 +589,19 @@ systemctl start rc-local
 ##Install Dynportal
 yum install -y firewalld
 cd /home
-#wget https://dialer.one/dynportal.zip
+wget https://dialer.one/dynportal.zip
 wget https://dialer.one/firewall.zip
 wget https://dialer.one/aggregate
 wget https://dialer.one/VB-firewall
 
 mkdir -p /var/www/vhosts/dynportal
+mv /home/dynportal.zip /var/www/vhosts/dynportal/
 mv /home/firewall.zip /etc/firewalld/
-cd /var/www/vhosts/
-git clone https://github.com/Salem6664/dynportal.git
 cd /var/www/vhosts/dynportal/
+#cd /var/www/vhosts/
+#git clone https://github.com/Salem6664/dynportal.git
+#cd /var/www/vhosts/dynportal/
+unzip dynportal.zip
 chmod -R 755 *
 chown -R apache:apache *
 cd /etc/httpd/conf.d/

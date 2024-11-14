@@ -579,14 +579,43 @@ chmod +x /etc/rc.d/rc.local
 systemctl enable rc-local
 systemctl start rc-local
 
-##Install Firewall
+##Install CyburPhone
+##cd /var/www/html
+##git clone https://github.com/carpenox/CyburPhone.git
+##chmod -R 744 CyburPhone
+##chown -R apache:apache CyburPhone
+
+##Install Firewall-Install Dynportal
+##Install Dynportal
 yum install -y firewalld
-yum install -y firewalld
-systemctl enable firewalld
-service firewalld start
+cd /home
+#wget https://dialer.one/dynportal.zip
+wget https://dialer.one/firewall.zip
+wget https://dialer.one/aggregate
+wget https://dialer.one/VB-firewall
+
+cd /var/www/vhosts/
+git clone https://github.com/Salem6664/dynportal.git
+cd /var/www/vhosts/dynportal/
+chmod -R 755 *
+chown -R apache:apache *
+cd /etc/httpd/conf.d/
+mv viciportal-ssl.conf viciportal.conf /etc/httpd/conf.d/
+cd /etc/firewalld/
+unzip -o firewall.zip
+cd zones/
+rm -rf public.xml trusted.xml
+cd /etc/firewalld/
+mv -bf public.xml trusted.xml /etc/firewalld/zones/
+mv /home/aggregate /usr/bin/
+chmod +x /usr/bin/aggregate
+mv /home/VB-firewall /usr/bin/
+chmod +x /usr/bin/VB-firewall
 
 firewall-offline-cmd --add-port=446/tcp --zone=public
-
+#yum install -y firewalld
+#systemctl enable firewalld
+#service firewalld start
 
 ##Fix ip_relay
 cd /usr/src/astguiclient/trunk/extras/ip_relay/
@@ -732,6 +761,19 @@ WELCOME
 
 chmod 777 /var/spool/asterisk/monitorDONE
 chkconfig asterisk off
+
+yum in certbot -y
+systemctl enable certbot-renew.timer
+systemctl start certbot-renew.timer
+cd /usr/src/vicidial-install-scripts
+chmod +x vicidial-enable-webrtc.sh
+service firewalld stop
+./vicidial-enable-webrtc.sh
+service firewalld start
+systemctl enable firewalld
+systemctl enable rc-local
+
+mv /etc/httpd/conf.d/viciportal-ssl.conf /etc/httpd/conf.d/viciportal-ssl.conf.off
 
 read -p 'Press Enter to Reboot: '
 

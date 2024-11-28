@@ -834,6 +834,7 @@ WELCOME
 chmod 777 /var/spool/asterisk/monitorDONE
 chkconfig asterisk off
 
+mysql -e "use asterisk; update system_settings set active_voicemail_server='$ip_address'"
 read -p 'Press Enter to Reboot: '
 
 echo "Restarting AlmaLinux"

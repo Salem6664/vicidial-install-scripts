@@ -1,12 +1,12 @@
 # VICIDIAL INSTALLATION SCRIPTS (Default is Eastern Time Zone US)
 # Centos7 and AlmaLinux Vicidial Install pre_requisites 
 
-Set Default Editor to nano:
+#Set Default Editor to nano:
 
-yum -y install nano
-nano /etc/bashrc
-Then add this line at the bottom:
-export EDITOR="nano"
+# yum -y install nano
+# nano /etc/bashrc
+# Then add this line at the bottom:
+# export EDITOR="nano"
 ```
 
 hostnamectl set-hostname xxxxxx.xxxxx.xxx

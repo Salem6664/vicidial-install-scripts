@@ -359,6 +359,12 @@ ln -sf /usr/lib/modules/$(uname -r)/vmlinux.xz /boot/
 cd /etc/include
 wget https://dialer.one/newt.h
 
+#Install Dahdi
+echo "Install Dahdi"
+ln -sf /usr/lib/modules/$(uname -r)/vmlinux.xz /boot/
+cd /etc/include
+wget https://dialer.one/newt.h
+
 cd /usr/src/
 mkdir dahdi-linux-complete-3.4.0+3.4.0
 cd dahdi-linux-complete-3.4.0+3.4.0

@@ -345,11 +345,11 @@ ln -sf /usr/lib/modules/$(uname -r)/vmlinux.xz /boot/
 cd /etc/include
 wget https://dialer.one/newt.h
 
-cd /usr/src/
+d /usr/src/
 mkdir dahdi-linux-complete-3.4.0+3.4.0
 cd dahdi-linux-complete-3.4.0+3.4.0
-wget https://cybur-dial.com/dahdi-9.4-fix.zip
-unzip dahdi-9.4-fix.zip
+wget https://cybur-dial.com/dahdi-9.5-fix.zip
+unzip dahdi-9.5-fix.zip
 yum in newt* -y
 
 make clean

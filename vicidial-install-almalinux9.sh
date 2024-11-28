@@ -11,9 +11,10 @@ EOF
 sudo dnf install langpacks-en -y
 yum groupinstall "Development Tools" -y
 
+yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+yum -y install yum-utils
 dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm -y
 dnf install https://rpms.remirepo.net/enterprise/remi-release-9.rpm -y
-yum -y install yum-utils
 
 dnf module enable php:remi-7.4 -y
 dnf module enable mariadb:10.5 -y

@@ -355,6 +355,8 @@ ldconfig
 
 #Install Dahdi
 echo "Install Dahdi"
+cd /etc/
+mkdir include
 ln -sf /usr/lib/modules/$(uname -r)/vmlinux.xz /boot/
 cd /etc/include
 wget https://dialer.one/newt.h

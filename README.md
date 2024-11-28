@@ -34,7 +34,7 @@ reboot
 # Install VICIDIAL scripts
 
 ```
-git clone [https://github.com/GenXoutsourcing/vicidial-install-scripts.git](https://github.com/Salem6664/vicidial-install-scripts.git)
+git clone https://github.com/GenXoutsourcing/vicidial-install-scripts.git
 cd vicidial-install-scripts
 ```
 

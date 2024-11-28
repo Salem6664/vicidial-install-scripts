@@ -85,7 +85,8 @@ EOF
 
 systemctl restart httpd
 
-
+yum in -y sqlite-devel httpd mod_ssl nano chkconfig htop atop mytop iftop
+yum in -y libedit-devel uuid* libxml2* speex-devel speex* postfix dovecot s-nail roundcubemail inxi
 dnf install -y mariadb-server mariadb
 
 dnf -y install dnf-plugins-core

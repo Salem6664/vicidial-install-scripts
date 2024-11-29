@@ -12,7 +12,7 @@ fi
 echo "Enter the DOMAIN NAME HERE. ***********IF YOU DONT HAVE ONE PLEASE DONT CONTINUE: "
 read DOMAINNAME
 
-wget -O /etc/httpd/conf.d/$DOMAINNAME.conf https://github.com/GenXoutsourcing/vicidial-install-scripts/blob/main/DOMAINNAME.conf
+wget -O /etc/httpd/conf.d/$DOMAINNAME.conf https://github.com/Salem6664/vicidial-install-scripts/blob/main/DOMAINNAME.conf
 sed -i s/DOMAINNAME/"$DOMAINNAME"/g /etc/httpd/conf.d/$DOMAINNAME.conf
 
 echo "Please Enter EMAIL and Agree the Terms and Conditions "

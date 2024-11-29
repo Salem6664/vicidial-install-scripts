@@ -2,6 +2,12 @@
 
 echo "Vicidial installation AlmaLinux9 with WebPhone(WebRTC/SIP.js)"
 
+ip_address=$(hostname -I | awk '{print $1}')
+echo "IP Address\t: $ip_address"
+echo "**************************************************************************"
+echo "Enter to continue..."
+read	
+
 export LC_ALL=C
 
 tee -a /etc/systemd/system.conf <<EOF

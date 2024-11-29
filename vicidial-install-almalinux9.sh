@@ -333,6 +333,7 @@ perl Makefile.PL
 make all
 make install 
 
+yum install -y elfutils-libelf-devel libedit-devel
 
 #Install Lame
 cd /usr/src

@@ -215,7 +215,8 @@ cpanm readline --force
 
 cpanm Bundle::CPAN
 cpanm DBI
-cpanm -f DBD::mysql
+#cpanm -f DBD::mysql
+cpanm -v -f DBD::mysql@4.050
 cpanm XML::Twig
 cpanm Net::Telnet
 cpanm Time::HiRes
